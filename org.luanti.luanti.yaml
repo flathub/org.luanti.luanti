@@ -41,10 +41,11 @@ modules:
           type: git
           tag-pattern: ([\d.]+)$
           is-important: true
+        commit: 8f0838506a83c108ff85f18050ced4f00a51950b
       - type: patch
         path: 0001-Fix-duplicate-provides-tag-in-metainfo.patch
       - type: script
         dest-filename: luanti.sh
         commands:
-          - MINETEST_USER_PATH=$HOME/.var/app/org.luanti.luanti/.minetest exec
-            luanti.bin "$@"
+          - MINETEST_USER_PATH=$HOME/.var/app/org.luanti.luanti/.minetest exec luanti.bin
+            "$@"
