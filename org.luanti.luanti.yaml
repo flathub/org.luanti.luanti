@@ -36,12 +36,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/luanti-org/luanti.git
-        tag: 5.12.0
+        tag: 5.13.0
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
           is-important: true
-        commit: 8f0838506a83c108ff85f18050ced4f00a51950b
+        commit: 5ab66da6f72e89fe9c9b71b3e952da1676a8e172
       - type: patch
         path: 0001-Fix-duplicate-provides-tag-in-metainfo.patch
       - type: script
