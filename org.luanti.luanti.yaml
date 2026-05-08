@@ -37,12 +37,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/luanti-org/luanti.git
-        tag: 5.15.2
+        tag: 5.16.0
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
           is-important: true
-        commit: 044ab8a35be38593aefd8fdde9601cc44754f3cc
+        commit: 750ae19568e88b49a6890ce2461e58e504aebdff
       - type: script
         dest-filename: luanti.sh
         commands:
