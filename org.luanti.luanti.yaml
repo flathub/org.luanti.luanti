@@ -24,6 +24,23 @@ cleanup:
 modules:
   - shared-modules/luajit/luajit.json
 
+  - name: libzip
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DBUILD_DOC=OFF
+      - -DBUILD_EXAMPLES=OFF
+      - -DBUILD_OSSFUZZ=OFF
+      - -DBUILD_REGRESS=OFF
+      - -DBUILD_TOOLS=OFF
+    sources:
+      - type: archive
+        url: https://github.com/nih-at/libzip/releases/download/v1.12.1/libzip-1.12.1.tar.xz
+        sha256: c40062022a1963c80573d48f6070792297cecd7c6bffe3aefcac0d8b9bee8913
+        x-checker-data:
+          type: anitya
+          project-id: 10649
+          url-template: https://github.com/nih-at/libzip/releases/download/v$version/libzip-$version.tar.xz
+
   - name: luanti
     buildsystem: cmake-ninja
     config-opts:
@@ -37,12 +54,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/luanti-org/luanti.git
-        tag: 5.17.0
+        tag: 5.18.0
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
           is-important: true
-        commit: c0e6812b1a4260bb25a1f606f70f55f4962bb97d
+        commit: e8f12bf1b93245cfc479ea21787beb1ec472cce9
       - type: script
         dest-filename: luanti.sh
         commands:
